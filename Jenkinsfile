@@ -26,7 +26,6 @@ pipeline {
 
         stage('Clean') {
             steps {
-				sh "mvn clean"        
                 echo "The pipeline stage Clean completed successfully."
             }
         }
