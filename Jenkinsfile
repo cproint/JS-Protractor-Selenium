@@ -9,7 +9,6 @@ pipeline {
     
         stage('Initialize and Compile') {
             steps {          	
-				sh "mvn initialize compile"
                 echo "The pipeline stage Initialize and Compile completed successfully."
             }
         }
@@ -19,7 +18,7 @@ pipeline {
 	        steps {
 	            sauce('923fc3a2-50d8-48b1-b8a1-adba6a7b72fe') {
 		           sauceconnect(options: '--tunnel-identifier El_Chapo_Tunnel --no-remove-colliding-tunnels', sauceConnectPath: '/Users/muralitulugu/Documents/sc-4.5.0-osx/bin/sc') {
-						sh "mvn test"
+						sh "test.sh"
 						step([$class: 'SauceOnDemandTestPublisher'])    
 		            	echo "The pipeline stage Functional Tests completed successfully."                    
 	            	}   
