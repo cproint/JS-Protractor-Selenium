@@ -22,7 +22,6 @@ pipeline {
 		            	echo "The pipeline stage Functional Tests completed successfully."                    
 	            	}   
 	            }
-	        }
         }
 
         stage('Clean') {
